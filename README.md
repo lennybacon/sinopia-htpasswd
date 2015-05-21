@@ -34,6 +34,12 @@ You can manually add new user with this command (see different commands [here](h
 $ echo "user:`mkpasswd --method=sha-512 password`" >> htpasswd
 ```
 
+On window you can use python with [passlib](https://pythonhosted.org/passlib/install.html) to generate a password:
+```
+python -c "from passlib.hash import sha512_crypt as sha512; print sha512.encrypt ('password', rounds=5000, implicit_rounds=True)"
+```
+
+
 ## For plugin writers
 
 It's called as:
